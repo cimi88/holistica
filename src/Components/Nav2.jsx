@@ -4,9 +4,10 @@ import "../Styles/nav2.css";
 export default function Nav2() {
 	const [navItems, setNavItems] = useState([
 		"Inicio",
-		"Servicios",
-		"Sobre nosotros",
-		"Contacto",
+		"Talleres y Seminarios",
+		"Asociaciones y Centros",
+		"Quien soy",
+		"Contactame",
 	]);
 	const [visibleItemsCount, setVisibleItemsCount] = useState(navItems.length);
 
@@ -42,6 +43,7 @@ export default function Nav2() {
 	return (
 		<>
 			<div id="nav-horizontal">
+				<div className="brillo"></div>
 				<button className="menu-boton">&#9776;</button>
 				<div className="items">
 					{navItems.slice(0, visibleItemsCount).map((item, index) => (

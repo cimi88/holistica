@@ -1,3 +1,23 @@
+.brillo {
+    position: absolute; /* Posicionamiento para colocarlo dentro del navbar */
+    bottom: 0; /* Alinear en la parte superior */
+    left: 0;
+    width: 100%;
+    height: 1rem; /* Altura del brillo, ajústalo como necesites */
+    pointer-events: none; /* Evita que interfiera con los clics */
+    background-image: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0.412), /* Color más claro (efecto de luz) */
+        rgba(255, 255, 255, 0.2),
+        rgba(214, 214, 214, 0.063), /* Transparente al final */
+        rgba(255, 255, 255, 0) /* Transparente al final */
+    );
+    border-top-left-radius: 8px; /* Si el navbar tiene bordes redondeados */
+    border-top-right-radius: 8px;
+    z-index: 1; /* Asegura que quede sobre el navbar */
+}
+
+
 #nav-horizontal > * {
 	line-height: 1rem;
 	text-shadow: 0 0 2.5px black;
@@ -9,7 +29,8 @@
 	width: 100%;
 	background-color: rgb(204, 74, 143);
 	min-height: 3rem;
-	position: relative;
+	box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .75);
+	z-index: 99;
 }
 
 #nav-horizontal .items {
@@ -20,15 +41,26 @@
 	min-height: 3rem;
 }
 
-#nav-horizontal .items a,
-#contenedor-vertical .items-sidebar a {
+#nav-horizontal .items a {
 	display: block;
 	color: white;
 	text-decoration: none;
 	min-width: fit-content;
 	line-height: 3rem;
 	height: 3rem;
-	transition: 0.3s ease-out;
+	padding: 0 8px;
+	transition: 0.15s ease-in-out;
+}
+#contenedor-vertical .items-sidebar a {
+	display: block;
+	color: white;
+	text-decoration: none;
+	min-width: fit-content;
+	line-height: 2rem;
+	height: 2rem;
+	margin: 4px;
+	padding: 0 8px;
+	transition: 0.15s ease-in-out;
 }
 
 #nav-horizontal a:hover {
@@ -50,7 +82,6 @@
 
 #nav-horizontal > .menu-boton:hover ~ #contenedor-vertical,
 #contenedor-vertical:hover {
-	background-color: rgb(204, 74, 143);
 	transform: translateX(0);
 }
 
@@ -60,8 +91,8 @@
 	top: 100%;
 	right: 0;
 	transform: translateX(100%);
-	transition: transform 1s ease-in-out;
-	border-bottom-left-radius: 8px;
+	transition: transform .3s ease-in-out;
+	z-index: 9;
 }
 
 #contenedor-vertical .items-sidebar {
@@ -70,10 +101,14 @@
 	transition: .3s ease-in-out;
 	border-bottom-left-radius: 8px;
 	background-color: rgb(204, 74, 143);
-	padding: 0 1rem;
+	padding: 1rem;
 	overflow-x: hidden;
-	text-shadow: 1px 0px 4px black;
+	box-shadow: 1px 2px 4px black;
+}
 
+#contenedor-vertical .items-sidebar a:hover {
+	background-color: hsl(328, 56%, 60%);
+	border-radius: 6px;
 }
 
 @media (max-width: 400px) {
