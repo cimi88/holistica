@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import logo from "../assets/logo.jpg";
 import "../Styles/nav2.css";
 
 export default function Nav2() {
@@ -42,16 +43,17 @@ export default function Nav2() {
 
 	return (
 		<>
-			<div id="nav-horizontal">
-				<div className="brillo"></div>
-				<button className="menu-boton">&#9776;</button>
+			<nav id="nav-horizontal">
+				<img src={logo} alt="logo" title="Ser en tu existencia" />
+				<h3 className="title">Ser en tu existencia</h3>
+				{/* <h3 className="title">Ser en tu existencia</h3> */}
 				<div className="items">
 					{navItems.slice(0, visibleItemsCount).map((item, index) => (
-						<a key={index} href="#">
-							{item}
-						</a>
+						<a key={index} href="#">{item}</a>
 					))}
 				</div>
+
+				<button className="menu-boton">&#9776;</button>
 				<div id="contenedor-vertical">
 					<div className="items-sidebar">
 						{navItems.map((item, index) => (
@@ -59,8 +61,7 @@ export default function Nav2() {
 						))}
 					</div>
 				</div>
-			</div>
-			
+			</nav>
 		</>
 	);
 }

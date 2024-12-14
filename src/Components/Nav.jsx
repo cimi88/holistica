@@ -44,7 +44,7 @@ export default function Nav() {
 	}, []);
 
 	return (
-		<nav>
+		<nav className="nav">
 			<div className="logoTitulo">
 				<img src={logo} alt="logo" title="Ser en tu existencia" />
 				<h1>Ser en tu existencia</h1>

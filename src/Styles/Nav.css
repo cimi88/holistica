@@ -1,7 +1,7 @@
 /* nav > * {
    border: 2px solid rgb(255, 242, 0);
 } */
-nav {
+.nav {
   display: flex;
   flex-direction: row;
   width: 100%;

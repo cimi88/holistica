@@ -1,31 +1,25 @@
-.brillo {
-    position: absolute; /* Posicionamiento para colocarlo dentro del navbar */
-    bottom: 0; /* Alinear en la parte superior */
-    left: 0;
-    width: 100%;
-    height: 1rem; /* Altura del brillo, ajústalo como necesites */
-    pointer-events: none; /* Evita que interfiera con los clics */
-    background-image: linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0.412), /* Color más claro (efecto de luz) */
-        rgba(255, 255, 255, 0.2),
-        rgba(214, 214, 214, 0.063), /* Transparente al final */
-        rgba(255, 255, 255, 0) /* Transparente al final */
-    );
-    border-top-left-radius: 8px; /* Si el navbar tiene bordes redondeados */
-    border-top-right-radius: 8px;
-    z-index: 1; /* Asegura que quede sobre el navbar */
-}
-
-
 #nav-horizontal > * {
 	line-height: 1rem;
 	text-shadow: 0 0 2.5px black;
 }
 
+#nav-horizontal img {
+  width: 40px;
+  height: 40px;
+  margin-left: 1rem;
+  border-radius: 20px;
+}
+
+.title {
+	min-width: fit-content;
+	padding-left: 1rem;
+	font-weight: 600;
+}
+
 #nav-horizontal {
 	display: flex;
 	flex-direction: row;
+	align-items: center;
 	width: 100%;
 	background-color: rgb(204, 74, 143);
 	min-height: 3rem;
@@ -42,12 +36,11 @@
 }
 
 #nav-horizontal .items a {
-	display: block;
+	display: flex;
+	align-items: center;
 	color: white;
 	text-decoration: none;
 	min-width: fit-content;
-	line-height: 3rem;
-	height: 3rem;
 	padding: 0 8px;
 	transition: 0.15s ease-in-out;
 }
@@ -111,7 +104,7 @@
 	border-radius: 6px;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 500px) {
 	#nav-horizontal .items {
 		display: none;
 	}
