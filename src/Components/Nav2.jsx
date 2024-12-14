@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./nav2.css";
+import "../Styles/nav2.css";
 
 export default function Nav2() {
 	const [navItems, setNavItems] = useState([
