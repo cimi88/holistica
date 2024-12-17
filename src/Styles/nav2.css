@@ -101,7 +101,6 @@
 	border: none;
 	font-size: 21px;
 	visibility: hidden;
-	border: 1px solid blue;
 }
 
 .menu-boton:hover ~ #contenedor-vertical, #contenedor-vertical:hover {
