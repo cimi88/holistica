@@ -20,9 +20,10 @@ main {
 }
 
 footer {
-    background-color: rgba(255, 0, 255, 0.25);
     display: flex;
-    flex-direction: column;
     height: 12em;
+    flex-direction: column;
     justify-content: center;
+    background-color: rgb(204, 74, 143);
+    box-shadow: 0px 0px 8px 2px rgba(0, 0, 0, .75);
 }

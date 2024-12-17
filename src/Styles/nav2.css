@@ -1,17 +1,4 @@
-#nav-horizontal .img {
-  width: 40px;
-  height: 40px;
-  margin-left: 1rem;
-  border-radius: 20px;
-}
-
-.title {
-	min-width: fit-content;
-	padding-left: 1rem;
-	font-weight: 400;
-	font-size: 24px;
-	color: white;
-}
+	/*   #nav-horizontal    */
 
 #nav-horizontal {
 	display: flex;
@@ -26,6 +13,26 @@
 	top: 0;
 }
 
+
+
+
+	/* logo titulo */
+
+#nav-horizontal .img {
+	width: 40px;  
+	height: 40px;
+	margin-left: 1rem;
+	border-radius: 20px;
+}  
+
+#nav-horizontal  .title {
+	min-width: fit-content;
+	padding-left: 1rem;
+	font-weight: 400;
+	font-size: 24px;
+	color: white;
+}
+
 #nav-horizontal .logo-titulo {
 	display: flex;
 	flex-direction: row;
@@ -35,18 +42,16 @@
 	flex: 1;
 }
 
+
+
+
+	/* items */
+
 #nav-horizontal .items {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
 	flex: 1;
-}
-
-#nav-horizontal .mas-boton-cont {
-	display: flex;
-	flex-direction: column;
-	white-space: nowrap;
-	padding-left: 1rem;
 }
 
 #nav-horizontal .items a {
@@ -71,12 +76,24 @@
 	margin: 4px;
 	padding: 0 8px;
 	transition: 0.15s ease-in-out;
-	
 }
 
-#nav-horizontal a:hover, .mas-boton-cont > .mas-boton:hover {
-	/* text-shadow: 0 2px 1px rgb(0, 0, 0); */
+
+
+
+	/* mas-boton-cont */
+
+#nav-horizontal .mas-boton-cont {
+	display: flex;
+	flex-direction: column;
+	white-space: nowrap;
+	padding-left: 1rem;
 }
+
+
+
+
+	/* menu-boton */
 
 #nav-horizontal .menu-boton {
 	display: block;
@@ -92,6 +109,37 @@
 }
 
 
+
+
+	/* masMenu */
+
+.masMenu {
+	display: flex;
+	opacity: 0;
+	top: 100%;
+	right: 100%;
+	position: absolute;
+	background-color: rgb(204, 74, 143);
+	border-radius: 0 0 0 8px;
+	transition: all .15s ease;
+	padding: 0 8px;
+}
+
+#nav-horizontal .mas-boton-cont:hover + .masMenu,
+#nav-horizontal .masMenu:hover {
+	display: flex;
+	position: absolute;
+	right: 0;
+	opacity: 1;
+	top: 100%;
+	min-width: fit-content;
+	transition: all .15s ease;
+}
+
+
+
+
+	/* contenedor-vertical */
 
 #contenedor-vertical {
 	display: flex;
@@ -114,7 +162,6 @@
 	border-bottom-left-radius: 8px;
 	background-color: rgb(204, 74, 143);
 	box-shadow: 1px 2px 4px black;
-	/* overflow-x: hidden; */
 }
 
 #contenedor-vertical .items-sidebar a:hover {
@@ -123,17 +170,9 @@
 }
 
 
-.masMenu {
-	display: flex;
-	opacity: 0;
-	top: 100%;
-	right: 100%;
-	position: absolute;
-	background-color: rgb(204, 74, 143);
-	border-radius: 0 0 0 8px;
-	transition: all .15s ease;
-	padding: 0 8px;
-}
+
+
+	/* mas-boton */
 
 #nav-horizontal .mas-boton-cont > .mas-boton {
 	display: none;
@@ -142,16 +181,11 @@
 	padding-right: 1rem;
 	color: white;
 }
-#nav-horizontal .mas-boton-cont:hover + .masMenu,
-#nav-horizontal .masMenu:hover {
-	display: flex;
-	position: absolute;
-	right: 0;
-	opacity: 1;
-	top: 100%;
-	min-width: fit-content;
-	transition: all .15s ease;
-}
+
+
+
+
+	/* mas-items */
 
 #nav-horizontal .masMenu .mas-items a {
 	display: flex;
@@ -165,6 +199,11 @@
 #nav-horizontal .masMenu .mas-items a:hover {
 	color: rgb(255,255,255);
 }
+
+
+
+
+	/* media querys */
 
 @media (max-width: 479px) {
 	#nav-horizontal .items, #nav-horizontal .mas-boton-cont {
