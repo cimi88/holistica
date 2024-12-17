@@ -7,14 +7,14 @@ export default function Nav2() {
 		"Inicio",
 		"Talleres y Seminarios",
 		"Asociaciones y Centros",
-		"Quien soy",
+		"Quién soy",
 		"Contactame",
 	]);
 	const [masMenuItems, setmasMenuItems] = useState([
 		"Inicio",
 		"Talleres y Seminarios",
 		"Asociaciones y Centros",
-		"Quien soy",
+		"Quién soy",
 		"Contactame",
 	]);
 	const [visibleItemsCount, setVisibleItemsCount] = useState(navItems.length);
@@ -25,13 +25,13 @@ export default function Nav2() {
 		const screenWidth = window.innerWidth;
 
 		// Ejemplo: Menos elementos visibles en pantallas más pequeñas
-		if (screenWidth < 500) {
+		if (screenWidth < 680) {
 			setVisibleItemsCount(1);
-		} else if (screenWidth < 700) {
+		} else if (screenWidth < 870) {
 			setVisibleItemsCount(2);
-		} else if (screenWidth < 800) {
+		} else if (screenWidth < 982) {
 			setVisibleItemsCount(3);
-		} else if (screenWidth < 1000) {
+		} else if (screenWidth < 1107) {
 			setVisibleItemsCount(4);
 		} else {
 			setVisibleItemsCount(navItems.length);
@@ -40,15 +40,16 @@ export default function Nav2() {
 	const adjustVisibleMasMenuItems = () => {
 		const screenWidth = window.innerWidth;
 
-		// Ejemplo: Menos elementos visibles en pantallas más pequeñas
-		if (screenWidth < 600) {
-			setVisibleMasMenuItemsCount(1);
-		} else if (screenWidth < 800) {
-			setVisibleMasMenuItemsCount(2);
-		} else if (screenWidth < 1000) {
+		if (screenWidth < 680) {
+			setVisibleMasMenuItemsCount(4);
+		} else if (screenWidth < 870) {
 			setVisibleMasMenuItemsCount(3);
+		} else if (screenWidth < 982) {
+			setVisibleMasMenuItemsCount(2);
+		} else if (screenWidth < 1107) {
+			setVisibleMasMenuItemsCount(1);
 		} else {
-			setVisibleMasMenuItemsCount(navItems.length);
+			setVisibleMasMenuItemsCount(0);
 		}
 	};
 
@@ -71,36 +72,41 @@ export default function Nav2() {
 	return (
 		<>
 			<nav id="nav-horizontal">
-				<img src={logo} alt="logo" title="Ser en tu existencia" />
-				<a className="title">Ser en tu existencia</a>
+				<div className="logo-titulo">
+					<img className="img" src={logo} alt="logo" title="Ser en tu existencia" />
+					<a href="#" className="title">Ser en tu existencia</a>
+				</div>
 
 				<div className="items">
 					{navItems.slice(0, visibleItemsCount).map((item, index) => (
-						<a key={index} href="#">
-							{item}
-						</a>
+						<a key={index} href="#">{item}</a>
 					))}
-					<div className="masMenu" style={{ display: "none" }}>
-						Más
-						<div className="mas-items" style={{ display: "none" }}>
-							{masMenuItems
-								.slice(0, visibleMasMenuItemsCount)
+				</div>
+
+				<div className="mas-boton-cont">
+					<a className="mas-boton">Más ▾</a>
+				</div>
+				
+				<div className="masMenu">
+					<div className="mas-items">
+						{visibleMasMenuItemsCount > 0 && (
+							masMenuItems
+								.slice(-visibleMasMenuItemsCount)
+								.reverse()
 								.map((item, index) => (
-									<a key={index} href="#">
-										{item}
-									</a>
-								))}
-						</div>
+									<a key={index} href="#">{item}</a>
+								))
+							)
+						}
 					</div>
 				</div>
 
-				<button className="menu-boton">&#9776;</button>
+				<button className="menu-boton">☰</button>
+
 				<div id="contenedor-vertical">
 					<div className="items-sidebar">
 						{navItems.map((item, index) => (
-							<a key={index} href="#">
-								{item}
-							</a>
+							<a key={index} href="#">{item}</a>
 						))}
 					</div>
 				</div>
