@@ -1,19 +1,19 @@
+// import Nav from "../Components/Nav.jsx";
 import Nav from "../Components/Nav.jsx";
-import Nav2 from "../Components/Nav2.jsx";
 import "../Styles/Home.css";
 
 export default function Home() {
 	return (
 		<div id="home">
-			<header>
-				<Nav2 />
+			<header className="header">
+				<Nav />
 			</header>
 
-            <main>
+            <main className="main">
 				<div>main</div>
             </main>
 
-			<footer>
+			<footer className="footer">
 				<div>footer</div>
 			</footer>
 		</div>

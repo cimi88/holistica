@@ -16,7 +16,7 @@ main {
     flex-direction: column;
     flex: 1;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: rgb(87, 87, 87);
 }
 
 footer {
